@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <style>
-    :root {
-      --tw-space-x-reverse: 0;
-      --tw-border-style: solid;
-    }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style-fixed.css" />
   </head>
   <body class="dark:bg-black dark:text-white">
     <div class="border-b border-b-red-500">Bottom Border Should be Here Here</div>
@@ -20,18 +14,9 @@
       <div class="bg-gray-500 size-6">4</div>
     </div>
 
-    <h2 class="mt-4">Fixed Version Adds the following:</h2>
-    <pre><code>
-      :root {
-        /* These must be set for FireFox to work properly with TW4 ⍺11 */
-        --tw-space-x-reverse: 0;
-        --tw-border-style: solid;
-      }
-    </code></pre>
-
-    <div class="mt-4">
-      The ideal approach for fixing this issue is to ensure fallback values are set for the custom properties where they
-      are used in the generated stylesheet.
+    <div class="mt-4">This version uses a modified stylesheet (style-fixed.css) with fallback values for<br />
+      --tw-space-x-reverse: 0;<br>
+      --tw-border-style: solid;
     </div>
   </body>
 </html>
