@@ -62,3 +62,6 @@ Suggested:
     border-width: 1px;
   }
 ```
+
+This demo can be viewed at:
+https://jdlien.com/tailwindv4-missing-custom-props/
