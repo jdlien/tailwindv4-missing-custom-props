@@ -4,14 +4,13 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <style>
     :root {
-      /* These must be set for FireFox to work properly with TW4 ⍺11 */
       /* --tw-space-x-reverse: 0; */
       /* --tw-border-style: solid; */
     }
     </style>
   </head>
   <body class="dark:bg-black dark:text-white">
-    <div class="border-b border-b-red-500">Bottom Border Should be Here Here</div>
+    <div class="border">Border Should be Here</div>
 
     <div class="mt-12">These boxes should be spaced 8 tw units apart</div>
     <div class="flex space-x-8 text-center">
@@ -22,11 +21,25 @@
     </div>
 
     <div>
-      The above border utility and space-x utilities will not render correctly in FireFox.
+      The above border and space-x utilities will not render correctly in FireFox.
+      Currently, Tailwind v4 uses the Houdini APIs' @property syntax which is not supported in release versions of
+      FireFox.
+
+      <pre><code>
+        @property --tw-space-x-reverse {
+          syntax: "<number>";
+          inherits: false;
+          initial-value: 0;
+        }
+        @property --tw-border-style {
+          syntax: "<custom-ident>";
+          inherits: false;
+          initial-value: solid;
+        }
     </div>
 
     <div class="mt-4">
-      Visit <a href="fixed.html" class="text-blue-500">fixed.html</a> to see how to fix this issue</a>
+      Visit <a href="fixed.html" class="text-blue-500">fixed.html</a> to see a fix for this issue.</a>
     </div>
   </body>
 </html>

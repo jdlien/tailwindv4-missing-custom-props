@@ -4,7 +4,6 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <style>
     :root {
-      /* These must be set for FireFox to work properly with TW4 ⍺11 */
       --tw-space-x-reverse: 0;
       --tw-border-style: solid;
     }
@@ -29,5 +28,10 @@
         --tw-border-style: solid;
       }
     </code></pre>
+
+    <div class="mt-4">
+      The ideal approach for fixing this issue is to ensure fallback values are set for the custom properties where they
+      are used in the generated stylesheet.
+    </div>
   </body>
 </html>
