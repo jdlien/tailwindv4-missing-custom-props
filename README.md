@@ -1,17 +1,17 @@
 # tailwindv4-missing-custom-props
 
-Demonstration of missing props breaking in Firefox Stable v124
+## Demo: Missing props used without fallback value breaking in Firefox Stable v124
 
-In Tailwind v4 alpha 11, several styles do not work in current stable builds of Firefox (v124). The ones I've noticed thus far are:
+In tailwindcss 4.0.0-alpha.11, several styles are not applied in current stable builds of Firefox (v124). The ones I've noticed thus far are:
 
 - space-x utilities
 - border utilities
 
 This is because Firefox v124 does not yet support the @property rule, and thus several CSS custom properties are undefined.
 
-Consequently, styles like space-x-_ and border-_ do not work in Firefox v124.
+Consequently, styles like space-x-_ and border-_ are not applied in Firefox v124.
 
-The properties are set by Tailwind v4 like this:
+The properties are set by Tailwind v4 like using @property rule like:
 
 ```css
 @property --tw-space-x-reverse {
@@ -21,7 +21,7 @@ The properties are set by Tailwind v4 like this:
 }
 ```
 
-This currently results in code like the following that uses the undefined custom props, and it does not use a fallback value:
+This currently results in code like the following that uses the undefined custom props without a fallback value:
 
 ```css
 .space-x-8 {
@@ -32,7 +32,7 @@ This currently results in code like the following that uses the undefined custom
 }
 ```
 
-The most straightforward solution is to add the appropriate fallback values to the custom properties in the `@tailwind base` directive in the `tailwind.config.js` file, i.e.:
+The most straightforward solution is to add the appropriate fallback values to the custom properties where they are used. For example, the above code could be modified to:
 
 ```css
 .space-x-8 {
